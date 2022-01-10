@@ -1,8 +1,19 @@
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import ChatRoom from './components/ChatRoom'
+import Login from './components/Login'
+import AuthProvider from './contexts/AuthProvider'
 import './App.css'
 
-function App() {
+const App = () => {
     return (
-        <div>Chat App</div>
+        <BrowserRouter>
+            <AuthProvider>
+                <Switch>
+                    <Route path='/login' component={Login} />
+                    <Route path='/' component={ChatRoom} />
+                </Switch>
+            </AuthProvider>
+        </BrowserRouter>
     )
 }
 
