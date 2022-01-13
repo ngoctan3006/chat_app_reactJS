@@ -1,6 +1,6 @@
-import { Row, Col } from 'antd'
-import ChatWindow from './ChatWindow'
-import Sidebar from './Sidebar'
+import { Row, Col } from 'antd';
+import ChatWindow from './ChatWindow';
+import Sidebar from './Sidebar';
 
 const ChatRoom = () => {
     return (
@@ -14,7 +14,7 @@ const ChatRoom = () => {
                 </Col>
             </Row>
         </div>
-    )
-}
+    );
+};
 
-export default ChatRoom
+export default ChatRoom;

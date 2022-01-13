@@ -1,11 +1,11 @@
-import { Button, Avatar, Tooltip, Form, Input } from 'antd'
-import styled from 'styled-components'
-import { UserAddOutlined } from '@ant-design/icons'
-import Message from './Message'
+import { Button, Avatar, Tooltip, Form, Input } from 'antd';
+import styled from 'styled-components';
+import { UserAddOutlined } from '@ant-design/icons';
+import Message from './Message';
 
 const WrapperStyled = styled.div`
     height: 100vh;
-`
+`;
 
 const HeaderStyled = styled.div`
     display: flex;
@@ -31,12 +31,12 @@ const HeaderStyled = styled.div`
             font-size: 12px;
         }
     }
-`
+`;
 
 const ButtonGroupStyled = styled.div`
     display: flex;
     align-items: center;
-`
+`;
 
 const ContentStyled = styled.div`
     height: calc(100% - 56px);
@@ -44,12 +44,12 @@ const ContentStyled = styled.div`
     flex-direction: column;
     padding: 11px;
     justify-content: flex-end;
-`
+`;
 
 const MessageListStyled = styled.div`
     max-height: 100%;
     overflow-y: auto;
-`
+`;
 
 const FormStyled = styled(Form)`
     display: flex;
@@ -63,7 +63,7 @@ const FormStyled = styled(Form)`
         flex: 1;
         margin-border: 0;
     }
-`
+`;
 
 const ChatWindow = () => {
     return (
@@ -139,7 +139,7 @@ const ChatWindow = () => {
                 </FormStyled>
             </ContentStyled>
         </WrapperStyled>
-    )
-}
+    );
+};
 
-export default ChatWindow
+export default ChatWindow;

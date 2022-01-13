@@ -1,5 +1,5 @@
-import { Button, Avatar, Typography } from 'antd'
-import styled from 'styled-components'
+import { Button, Avatar, Typography } from 'antd';
+import styled from 'styled-components';
 
 const WrapperStyled = styled.div`
     display: flex;
@@ -11,7 +11,7 @@ const WrapperStyled = styled.div`
         color: white;
         margin-left: 5px;
     }
-`
+`;
 
 const UserInfo = () => {
     return (
@@ -22,7 +22,7 @@ const UserInfo = () => {
             </div>
             <Button ghost>Đăng xuất</Button>
         </WrapperStyled>
-    )
-}
+    );
+};
 
-export default UserInfo
+export default UserInfo;

@@ -1,13 +1,14 @@
-import { Row, Col, Button, Typography } from 'antd'
-import firebase, { auth } from '../../firebase/config'
+import { Row, Col, Button, Typography } from 'antd';
+import firebase, { auth } from '../../firebase/config';
 
-const { Title } = Typography
-const fbProvider = new firebase.auth.FacebookAuthProvider()
+const { Title } = Typography;
+const fbProvider = new firebase.auth.FacebookAuthProvider();
 
 const Login = () => {
-    const handleFbLogin = () => {
-        auth.signInWithPopup(fbProvider)
-    }
+    const handleFbLogin = async () => {
+        const data = await auth.signInWithPopup(fbProvider);
+        console.log(data);
+    };
 
     return (
         <div>
@@ -25,7 +26,7 @@ const Login = () => {
                 </Col>
             </Row>
         </div>
-    )
-}
+    );
+};
 
-export default Login
+export default Login;

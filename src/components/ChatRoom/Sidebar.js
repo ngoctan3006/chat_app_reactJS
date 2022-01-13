@@ -1,13 +1,13 @@
-import { Row, Col } from 'antd'
-import styled from 'styled-components'
-import RoomList from './RoomList'
-import UserInfo from './UserInfo'
+import { Row, Col } from 'antd';
+import styled from 'styled-components';
+import RoomList from './RoomList';
+import UserInfo from './UserInfo';
 
 const SidebarStyled = styled.div`
     background: #3f0e40;
     color: white;
     height: 100vh;
-`
+`;
 
 const Sidebar = () => {
     return (
@@ -21,7 +21,7 @@ const Sidebar = () => {
                 </Col>
             </Row>
         </SidebarStyled>
-    )
-}
+    );
+};
 
-export default Sidebar
+export default Sidebar;

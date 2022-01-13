@@ -1,8 +1,8 @@
-import { PlusSquareOutlined } from '@ant-design/icons'
-import { Collapse, Typography, Button } from 'antd'
-import styled from 'styled-components'
+import { PlusSquareOutlined } from '@ant-design/icons';
+import { Collapse, Typography, Button } from 'antd';
+import styled from 'styled-components';
 
-const { Panel } = Collapse
+const { Panel } = Collapse;
 
 const PanelStyled = styled(Panel)`
     &&& {
@@ -20,13 +20,13 @@ const PanelStyled = styled(Panel)`
             padding: 0;
         }
     }
-`
+`;
 
 const LinkStyled = styled(Typography.Link)`
     display: block;
     margin-bottom: 5px;
     color: white;
-`
+`;
 
 const RoomList = () => {
     return (
@@ -43,7 +43,7 @@ const RoomList = () => {
                 </Button>
             </PanelStyled>
         </Collapse>
-    )
-}
+    );
+};
 
-export default RoomList
+export default RoomList;
