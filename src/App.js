@@ -5,6 +5,7 @@ import AuthProvider from './contexts/AuthProvider';
 import './App.css';
 import AppProvider from './contexts/AppProvider';
 import AddRoomModal from './components/Modals/AddRoomModal';
+import InviteMemberModal from './components/Modals/InviteMemberModal';
 
 const App = () => {
     return (
@@ -16,6 +17,7 @@ const App = () => {
                         <Route path='/' component={ChatRoom} />
                     </Switch>
                     <AddRoomModal />
+                    <InviteMemberModal />
                 </AppProvider>
             </AuthProvider>
         </BrowserRouter>
