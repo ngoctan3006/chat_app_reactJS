@@ -1,5 +1,6 @@
 import { Row, Col, Button, Typography } from 'antd';
 import firebase, { auth } from '../../firebase/config';
+import { addDocument } from '../../firebase/services';
 
 const { Title } = Typography;
 const fbProvider = new firebase.auth.FacebookAuthProvider();
@@ -8,6 +9,17 @@ const Login = () => {
     const handleFbLogin = async () => {
         const data = await auth.signInWithPopup(fbProvider);
         console.log(data);
+        const { additionalUserInfo, user } = data;
+
+        if (additionalUserInfo?.isNewUser) {
+            addDocument('users', {
+                displayName: user.displayName,
+                email: user.email,
+                photoURL: user.photoURL,
+                uid: user.uid,
+                providerId: additionalUserInfo.providerId
+            });
+        }
     };
 
     return (

@@ -3,15 +3,20 @@ import ChatRoom from './components/ChatRoom';
 import Login from './components/Login';
 import AuthProvider from './contexts/AuthProvider';
 import './App.css';
+import AppProvider from './contexts/AppProvider';
+import AddRoomModal from './components/Modals/AddRoomModal';
 
 const App = () => {
     return (
         <BrowserRouter>
             <AuthProvider>
-                <Switch>
-                    <Route path='/login' component={Login} />
-                    <Route path='/' component={ChatRoom} />
-                </Switch>
+                <AppProvider>
+                    <Switch>
+                        <Route path='/login' component={Login} />
+                        <Route path='/' component={ChatRoom} />
+                    </Switch>
+                    <AddRoomModal />
+                </AppProvider>
             </AuthProvider>
         </BrowserRouter>
     );
