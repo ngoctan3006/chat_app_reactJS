@@ -1,5 +1,8 @@
 import { Button, Avatar, Typography } from 'antd';
+import { useContext } from 'react';
 import styled from 'styled-components';
+import { auth } from '../../firebase/config';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const WrapperStyled = styled.div`
     display: flex;
@@ -14,13 +17,23 @@ const WrapperStyled = styled.div`
 `;
 
 const UserInfo = () => {
+    const {
+        user: { displayName, photoURL }
+    } = useContext(AuthContext);
+
     return (
         <WrapperStyled>
             <div>
-                <Avatar>T</Avatar>
-                <Typography.Text className='username'>Tân</Typography.Text>
+                <Avatar src={photoURL}>
+                    {photoURL ? '' : displayName?.charAt(0).toUpperCase()}
+                </Avatar>
+                <Typography.Text className='username'>
+                    {displayName}
+                </Typography.Text>
             </div>
-            <Button ghost>Đăng xuất</Button>
+            <Button ghost onClick={() => auth.signOut()}>
+                Đăng xuất
+            </Button>
         </WrapperStyled>
     );
 };
