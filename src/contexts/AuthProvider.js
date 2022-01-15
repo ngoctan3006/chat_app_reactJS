@@ -19,6 +19,7 @@ const AuthProvider = ({ children }) => {
                 history.push('/');
                 return;
             }
+            setIsLoading(false);
             history.push('/login');
         });
 
