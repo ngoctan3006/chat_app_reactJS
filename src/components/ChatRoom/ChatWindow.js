@@ -1,7 +1,9 @@
 import { Button, Avatar, Tooltip, Form, Input } from 'antd';
 import styled from 'styled-components';
 import { UserAddOutlined } from '@ant-design/icons';
+import { useContext } from 'react';
 import Message from './Message';
+import { AppContext } from '../../contexts/AppProvider';
 
 const WrapperStyled = styled.div`
     height: 100vh;
@@ -66,33 +68,22 @@ const FormStyled = styled(Form)`
 `;
 
 const ChatWindow = () => {
+    const { selectedRoom } = useContext(AppContext);
+
     return (
         <WrapperStyled>
             <HeaderStyled>
                 <div className='header__info'>
-                    <p className='header__title'>Room 1</p>
-                    <span className='header__description'>Đây là Room 1</span>
+                    <p className='header__title'>{selectedRoom.name}</p>
+                    <span className='header__description'>
+                        {selectedRoom.description}
+                    </span>
                 </div>
                 <ButtonGroupStyled>
                     <Button type='text' icon={<UserAddOutlined />}>
                         Mời
                     </Button>
                     <Avatar.Group size='small' maxCount={2}>
-                        <Tooltip title='Tân'>
-                            <Avatar>T</Avatar>
-                        </Tooltip>
-                        <Tooltip title='Tân'>
-                            <Avatar>T</Avatar>
-                        </Tooltip>
-                        <Tooltip title='Tân'>
-                            <Avatar>T</Avatar>
-                        </Tooltip>
-                        <Tooltip title='Tân'>
-                            <Avatar>T</Avatar>
-                        </Tooltip>
-                        <Tooltip title='Tân'>
-                            <Avatar>T</Avatar>
-                        </Tooltip>
                         <Tooltip title='Tân'>
                             <Avatar>T</Avatar>
                         </Tooltip>
